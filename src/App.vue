@@ -20,7 +20,7 @@
     <EditModal 
       :is-show-edit-modal="data.isShowEditModal" 
       :item-data="data.currentData" 
-      @submit-edit="submitEdit(arguments)" />    
+      @submit-edit="submitEdit($event)" />    
   </div>
 </template>
 
@@ -79,10 +79,9 @@ const removeItem = (id) => {
 }
 
 const submitEdit = (args) => {
-  console.log("接收参数 => ", args)
   data.todoList = data.todoList.map(item => {
-    if (item.id === args[1]) {
-      item = args[0]
+    if (item.id === args.id) {
+      item = args.newData
     }
     return item
   })

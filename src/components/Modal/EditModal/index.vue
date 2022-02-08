@@ -54,7 +54,8 @@ const formatNewData = () => {
     content: data.inputValue.trim(),
     completed: data.checkValue
   }
-  emit("submit-edit", newData, props.itemData.id)
+  emit("submit-edit", {newData, id: props.itemData.id})
+  // emit("submit-edit", {nData: newData, id: props.itemData.id})
 }
 </script>
 
