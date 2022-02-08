@@ -35,14 +35,14 @@ import NoDataTip from "./components/NoDataTip/index.vue"
 
 const data = reactive({
   isInputShow: false,
-  todoList: [],
-  // todoList: JSON.parse(localStorage.getItem('todoData') || '[]'),
+  // todoList: [],
+  todoList: JSON.parse(localStorage.getItem('todoData') || '[]'),
   isShowCheckModal: false,
   isShowEditModal: false,
   currentData: {}
 })
 
-data.todoList = JSON.parse(localStorage.getItem('todoData') || '[]')
+// data.todoList = JSON.parse(localStorage.getItem('todoData') || '[]')
 
 watch(() => data.todoList, (newVal, oldVal) => {
   localStorage.setItem('todoData', JSON.stringify(newVal)) // 监测todoList，有变化，就缓存
